@@ -34,6 +34,7 @@ namespace Kafe_Otomasyonu//a
         }
         public static bool loginkontrol(string user_nick, string pass)//login kontrol etmek için oluşturduğum sınıf @bleda
         {
+            
             string sorgu = "Select*From giris_ve_kayıt_veritabanı where user_nick=@user and user_password=@pass ";
             con = new SqlConnection(SqlCon);
             cmd = new SqlCommand(sorgu, con);

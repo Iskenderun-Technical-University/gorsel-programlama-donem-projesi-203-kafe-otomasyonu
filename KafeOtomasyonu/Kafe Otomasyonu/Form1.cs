@@ -69,6 +69,13 @@ namespace Kafe_Otomasyonu
         {
             Application.Exit(); // bu  çarpı işaretinin işlevi kapatıyor basınca @bleda
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
+        }
     }
 }
 

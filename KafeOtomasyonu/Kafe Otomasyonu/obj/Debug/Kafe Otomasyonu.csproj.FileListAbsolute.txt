@@ -9,3 +9,15 @@ C:\Users\bleda\source\repos\Yeni klasör\Kafe Otomasyonu\Kafe Otomasyonu\obj\Deb
 C:\Users\bleda\source\repos\Yeni klasör\Kafe Otomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.CoreCompileInputs.cache
 C:\Users\bleda\source\repos\Yeni klasör\Kafe Otomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.exe
 C:\Users\bleda\source\repos\Yeni klasör\Kafe Otomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.pdb
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.exe.config
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.exe
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.pdb
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.AssemblyReference.cache
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.SuggestedBindingRedirects.cache
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form1.resources
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Properties.Resources.resources
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.GenerateResource.cache
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.CoreCompileInputs.cache
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.exe
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.pdb
+C:\kafe\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form2.resources
