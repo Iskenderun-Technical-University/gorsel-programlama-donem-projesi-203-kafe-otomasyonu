@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 
 
-namespace Kafe_Otomasyonu//a
+namespace Kafe_Otomasyonu
 {
     internal class Class1
 
@@ -19,6 +19,8 @@ namespace Kafe_Otomasyonu//a
         System.Data.DataSet ds;
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";
+        public static string kullaniciCap = ""; //form3 için gerekli kullanıcı kontrolü @emre
+
 
         public static string MD5Sifrele(string sifrelenecekMetin)//burası md5 şifreleme için oluşturduğum class @bleda
         {
@@ -45,15 +47,18 @@ namespace Kafe_Otomasyonu//a
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                return true;
                 con.Close();
+                return true;
+                
 
 
             }
             else
             {
-                return false;
+
                 con.Close();
+                return false;
+                
             }
         }
     }

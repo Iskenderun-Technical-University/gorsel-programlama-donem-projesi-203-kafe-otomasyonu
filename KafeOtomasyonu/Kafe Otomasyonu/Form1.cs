@@ -76,6 +76,7 @@ namespace Kafe_Otomasyonu
             form2.Show();
             this.Hide();
         }
+
     }
 }
 

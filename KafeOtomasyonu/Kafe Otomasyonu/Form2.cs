@@ -20,7 +20,7 @@ namespace Kafe_Otomasyonu
         DataSet ds;
         SqlDataAdapter da;
 
-        public static string SqlCon = "Data Source=localhost\\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bledaa
+        public static string SqlCon = "Data Source=localhost\\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True"; //bağlantı için gerekli komutlar @Kemal
 
         public Form2()
         {
@@ -39,7 +39,7 @@ namespace Kafe_Otomasyonu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection(SqlCon);
+            con = new SqlConnection(SqlCon); //Giriş için gerekli sql bağlantısı @Kemal
             string sql = "insert into giris_ve_kayıt_veritabanı(user_nick, user_password, user_mail, user_datetime) values (@user, @pass, @mail, @datetime)";
             cmd=new SqlCommand();
             cmd.Parameters.AddWithValue("@user", KullaniciAdi.Text);

@@ -65,7 +65,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(252, 286);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(144, 20);
             this.textBox1.TabIndex = 4;
@@ -74,7 +74,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(252, 353);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(144, 20);
             this.textBox2.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(439, 56);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(20, 19);
             this.button1.TabIndex = 6;
@@ -107,7 +107,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.SystemColors.ControlDark;
