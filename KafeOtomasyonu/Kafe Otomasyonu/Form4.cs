@@ -48,7 +48,19 @@ namespace Kafe_Otomasyonu
             cmd.ExecuteNonQuery();
             con.Close();
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
-            //sipariş eklemek için gerekli komutlar @bleda
+
+            con = new SqlConnection(SqlCon);
+            string sqli = "update siparis_tablo set siparis_adet=@s_adet where siparis_id=@s_id ";
+            cmd1 = new SqlCommand();
+            cmd1.Parameters.AddWithValue("@s_id", Convert.ToInt32(textBox7.Text));
+            cmd1.Parameters.AddWithValue("@s_adet", Convert.ToInt32(textBox2.Text));
+            con.Open();
+            cmd1.Connection = con;
+            cmd1.CommandText = sqli;
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
+            //sipariş eklemek ve sipariş gücellemek için gerekli komutlar @bleda
 
         }
 
@@ -115,8 +127,22 @@ namespace Kafe_Otomasyonu
 
         }
 
-
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+           /* con = new SqlConnection(SqlCon);
+            string sqli = "update siparis_tablo set siparis_adet=@s_adet where siparis_id=@s_id ";
+            cmd1 = new SqlCommand();
+           cmd1.Parameters.AddWithValue("@s_id", Convert.ToInt32(textBox7.Text));
+            cmd1.Parameters.AddWithValue("@s_adet",Convert.ToInt32(textBox2.Text));
+            con.Open();
+            cmd1.Connection = con;
+            cmd1.CommandText = sqli;
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
+           buraya sakın bulaşmayın dhgasgd @bleda */ 
+            
+        }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
@@ -129,20 +155,8 @@ namespace Kafe_Otomasyonu
         {
 
         }
-        /*
-  con = new SqlConnection(SqlCon);
-  string sqli ="uptade siparis_tablo set siparis_adet=@s_adet where siparis_id=@s_id and siparis_adi=@s_ad";
-  cmd = new SqlCommand();
-  cmd.Parameters.AddWithValue("@s_id",textBox7.Text);
-  cmd.Parameters.AddWithValue("@s_adet", textBox2.Text);
-  cmd.Parameters.AddWithValue("@s_ad", textBox3.Text);
-  con.Open();
-  cmd.Connection = con;
-  cmd.CommandText = sqli;
-  cmd.ExecuteNonQuery();
-  con.Close();
-  Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
-  burası updtate işlemi için sıra bana gelince halledicem*/
+        
+  
     }
 }
 
