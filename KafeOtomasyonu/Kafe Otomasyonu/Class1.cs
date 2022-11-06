@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 
 namespace Kafe_Otomasyonu
@@ -16,7 +17,8 @@ namespace Kafe_Otomasyonu
         static SqlConnection con;
         static SqlCommand cmd;
         static SqlDataReader dr;
-        System.Data.DataSet ds;
+        static System.Data.DataSet ds;
+        static SqlDataAdapter da;
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";
         public static string kullaniciCap = ""; //form3 için gerekli kullanıcı kontrolü @emre
@@ -60,6 +62,29 @@ namespace Kafe_Otomasyonu
                 return false;
                 
             }
+        }
+      public  static DataGridView GridDoldur(DataGridView datagrid, string sqlsorgu)
+        {
+            con = new SqlConnection(SqlCon);
+            da = new SqlDataAdapter("select * from urun_bilgi", con);
+            ds = new System.Data.DataSet();
+            con.Open();
+            da.Fill(ds,sqlsorgu);
+            datagrid.DataSource = ds.Tables[sqlsorgu];
+            con.Close();
+            return datagrid;//1.datagrid tablo komutları@bleda
+        }
+        public static DataGridView GridDoldur2(DataGridView datagrid, string sqlsorgu)
+        {
+            con = new SqlConnection(SqlCon);
+            da = new SqlDataAdapter("select * from siparis_tablo", con);
+            ds = new System.Data.DataSet();
+            con.Open();
+            da.Fill(ds, sqlsorgu);
+            datagrid.DataSource = ds.Tables[sqlsorgu];
+            con.Close();
+            return datagrid;
+            //2.datagrid tablo komutları@bleda
         }
     }
 }

@@ -43,11 +43,15 @@ namespace Kafe_Otomasyonu
             if (Class1.loginkontrol(textBox1.Text, textBox2.Text))
             {
                 MessageBox.Show("GİRİŞ BAŞARILI");
+                Form4 form4 = new Form4();
+                form4.Show();
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("KULLANICI ADI YA DA ŞİFRE HATALI");
             }//label1 giriş yap butonunun tuşu bu da onu çalıştırıyor.@bleda
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
