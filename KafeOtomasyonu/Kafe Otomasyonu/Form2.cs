@@ -52,6 +52,8 @@ namespace Kafe_Otomasyonu
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
             con.Close();
+
+            
             
         }
 
