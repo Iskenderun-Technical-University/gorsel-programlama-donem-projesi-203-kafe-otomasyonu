@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
-using System.Data.SqlClient;
 
 namespace Kafe_Otomasyonu
 {
@@ -20,14 +19,17 @@ namespace Kafe_Otomasyonu
         SqlDataReader dr;
         DataSet ds;
         SqlDataAdapter da;
+        int personelid;
+
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bleda
-
+        
         public Form4()
         {
             InitializeComponent();
 
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

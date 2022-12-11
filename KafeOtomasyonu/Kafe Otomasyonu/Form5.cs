@@ -21,11 +21,27 @@ namespace Kafe_Otomasyonu
         SqlDataReader dr;
         DataSet ds;
         SqlDataAdapter da;
+        DataTable dt;
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @Kemal
+        public string sqlsorgu; //Sorgu işlemleri için global değişken @emre
 
+        public Form5()
+        {
+            InitializeComponent();
+        }
+        void GridDoldur(string sql)
+        {   //Class1 sınıfında yer alan GridDoldur3 parametreleri sorgulamaya uymadığı için yeni doldurma komutu yazdım @emre
+            con = new SqlConnection(SqlCon);
+            con.Open();
+            cmd = new SqlCommand(sql, con);
+            da = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da.Fill(dt);
 
-
+            dataGridView1.DataSource = dt;
+            con.Close();
+        }
 
 
         private void button8_Click(object sender, EventArgs e)// Burası adminin sql tablosuna kullanıcı eklemek için @Kemal
@@ -97,10 +113,65 @@ namespace Kafe_Otomasyonu
             dateTimePicker2.Text = dataGridView3.CurrentRow.Cells[4].Value.ToString();
         }
 
-        public Form5()
+        private void Kullaniciadinagore_CheckedChanged(object sender, EventArgs e)
         {
-            InitializeComponent();
+
         }
+        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                if (Kullaniciadinagore.Checked)
+                {
+                    //Kullanıcı adına göre arama @emre
+                    sqlsorgu = "select *from giris_ve_kayıt_veritabanı where user_nick like '%" + textBox1.Text + "%'";
+                    GridDoldur(sqlsorgu);
+                }
+                else if(radioButton3.Checked)
+                {
+
+                }
+               
+            }
+        }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Tarihe göre arama @emre
+                if (radioButton1.Checked)
+                {
+                    sqlsorgu = "select * from giris_ve_kayıt_veritabanı where user_datetime>'" + dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "'" + "AND user_datetime <='" + dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss") + "' ORDER BY user_datetime ASC";
+                    GridDoldur(sqlsorgu);
+                }
+                else if (radioButton2.Checked)
+                {
+                    sqlsorgu = "select * from giris_ve_kayıt_veritabanı where user_datetime>'" + dateTimePicker1.Value.ToString() + "'" + "AND user_datetime <='" + dateTimePicker2.Value.ToString() + "' ORDER BY user_datetime DESC";
+                    GridDoldur(sqlsorgu);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns.Clear(); //temizleme komutu @emre
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
 
         private void Form5_Load(object sender, EventArgs e)
         {

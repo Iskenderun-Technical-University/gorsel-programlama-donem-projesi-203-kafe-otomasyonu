@@ -99,5 +99,15 @@ namespace Kafe_Otomasyonu.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Görsel_2022_12_10_saat_14_05_06 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Görsel 2022-12-10 saat 14.05.06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
