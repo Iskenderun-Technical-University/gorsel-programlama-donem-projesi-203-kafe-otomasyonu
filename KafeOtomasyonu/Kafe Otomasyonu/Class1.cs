@@ -99,7 +99,7 @@ namespace Kafe_Otomasyonu
             return datagrid;//3.datagrid tablo komutları @Kemal
         }
 
-        public int PersonelİdAl(String kullaniciadi , String sifre) //personel id tutmak için bir fonksiyon @emre
+        public static int PersonelİdAl(String kullaniciadi , String sifre) //personel id tutmak için bir fonksiyon @emre
         {
             int id = 0;
             String sqlsorgu = "select user_id from giris_ve_kayıt_veritabanı where user_nick=@kullaniciadi AND user_password=@sifre";

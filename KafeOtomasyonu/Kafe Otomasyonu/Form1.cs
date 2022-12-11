@@ -43,9 +43,11 @@ namespace Kafe_Otomasyonu
             if (Class1.loginkontrol(textBox1.Text, textBox2.Text))
             {
                 MessageBox.Show("GİRİŞ BAŞARILI");
+                Form4.id = Class1.PersonelİdAl(textBox1.Text, textBox2.Text); //form1 e girilen personelin ıd sini form4 e attık. @emre
                 Form4 form4 = new Form4();
                 form4.Show();
                 this.Hide();
+                
             }
             else
             {

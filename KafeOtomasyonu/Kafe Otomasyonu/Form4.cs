@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 
 namespace Kafe_Otomasyonu
 {
+    
     public partial class Form4 : Form
     {
         SqlConnection con,con1;
@@ -19,7 +20,8 @@ namespace Kafe_Otomasyonu
         SqlDataReader dr;
         DataSet ds;
         SqlDataAdapter da;
-        int personelid;
+        public static int id;
+        
 
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bleda
@@ -144,6 +146,11 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
            buraya sakın bulaşmayın dhgasgd @bleda */ 
             
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(id.ToString());
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
