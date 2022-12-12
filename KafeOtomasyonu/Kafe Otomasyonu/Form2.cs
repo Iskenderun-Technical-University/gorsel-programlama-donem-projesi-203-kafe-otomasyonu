@@ -67,5 +67,12 @@ namespace Kafe_Otomasyonu
             Application.Exit();
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
     }
 }
