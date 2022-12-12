@@ -49,6 +49,13 @@ namespace Kafe_Otomasyonu
                 this.Hide();
                 
             }
+            else if(Class1.adminloginkontrol(textBox1.Text,textBox2.Text))//admin login durumunu kontrol etme @Bleda
+            {
+                MessageBox.Show("GİRİŞ BAŞARILI");
+                Form5 form5 = new Form5();
+                form5.Show();
+                this.Hide();
+            }
             else
             {
                 MessageBox.Show("KULLANICI ADI YA DA ŞİFRE HATALI");
@@ -83,7 +90,10 @@ namespace Kafe_Otomasyonu
             this.Hide();
         }
 
-
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
     }
 }
 

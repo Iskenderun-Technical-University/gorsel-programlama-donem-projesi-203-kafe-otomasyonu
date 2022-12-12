@@ -99,21 +99,48 @@ namespace Kafe_Otomasyonu
             return datagrid;//3.datagrid tablo komutları @Kemal
         }
 
-        public static int PersonelİdAl(String kullaniciadi , String sifre) //personel id tutmak için bir fonksiyon @emre
+        public static int PersonelİdAl(String kullaniciadi, String sifre) //personel id tutmak için bir fonksiyon @emre
         {
             int id = 0;
             String sqlsorgu = "select user_id from giris_ve_kayıt_veritabanı where user_nick=@kullaniciadi AND user_password=@sifre";
             con = new SqlConnection(SqlCon);
-            cmd = new SqlCommand(sqlsorgu,con);
+            cmd = new SqlCommand(sqlsorgu, con);
             cmd.Parameters.AddWithValue("@kullaniciadi", kullaniciadi);
             cmd.Parameters.AddWithValue("@sifre", MD5Sifrele(sifre));
             con.Open();
-            dr= cmd.ExecuteReader();
-            while(dr.Read())
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-               id=Convert.ToInt32(dr[0]);
+                id = Convert.ToInt32(dr[0]);
             }
             return id;
+        }
+        public static bool adminloginkontrol(string admmin_nick, string apass)//admin girişini kontrol etmek için oluşturduğum sınıf @Bleda
+        {
+
+            string sorgu = "Select*From admin_giris where admmin_nick=@auser and admin_password=@apass ";
+            con = new SqlConnection(SqlCon);
+            cmd = new SqlCommand(sorgu, con);
+            cmd.Parameters.AddWithValue("@auser", admmin_nick);
+            cmd.Parameters.AddWithValue("@apass", apass);
+            con.Open();
+            cmd.Connection = con;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                con.Close();
+                return true;
+
+
+
+            }
+            else
+            {
+
+                con.Close();
+                return false;
+
+            }
         }
     }
 }

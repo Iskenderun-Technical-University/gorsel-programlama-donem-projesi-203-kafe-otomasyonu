@@ -54,9 +54,9 @@ namespace Kafe_Otomasyonu
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -349,6 +349,16 @@ namespace Kafe_Otomasyonu
             this.panel1.Size = new System.Drawing.Size(746, 65);
             this.panel1.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(513, 26);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 33);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(111, 23);
@@ -365,16 +375,6 @@ namespace Kafe_Otomasyonu
             this.label8.TabIndex = 0;
             this.label8.Text = "Aranacak Metin:\r\n";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(513, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +383,7 @@ namespace Kafe_Otomasyonu
             this.ClientSize = new System.Drawing.Size(754, 505);
             this.Controls.Add(this.tabControl1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form4";
             this.Text = "Form4";
