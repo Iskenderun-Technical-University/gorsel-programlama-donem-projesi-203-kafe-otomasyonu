@@ -23,7 +23,7 @@ namespace Kafe_Otomasyonu
         SqlDataAdapter da;
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bledaa
-
+        public static string kullanicimSession = ""; //giriş yapan personel tekrar kullanıcı adı yazmasın diye yazdım. @emre
 
         public Form1()
         {
@@ -44,10 +44,12 @@ namespace Kafe_Otomasyonu
             {
                 MessageBox.Show("GİRİŞ BAŞARILI");
                 Form4.id = Class1.PersonelİdAl(textBox1.Text, textBox2.Text); //form1 e girilen personelin ıd sini form4 e attık. @emre
+               
+                this.Hide();
+                kullanicimSession = textBox1.Text;
                 Form4 form4 = new Form4();
                 form4.Show();
-                this.Hide();
-                
+
             }
             else if(Class1.adminloginkontrol(textBox1.Text,textBox2.Text))//admin login durumunu kontrol etme @Bleda
             {

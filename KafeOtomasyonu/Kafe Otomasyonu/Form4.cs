@@ -25,11 +25,56 @@ namespace Kafe_Otomasyonu
 
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bleda
-        
+        public int sonuc = 0; //captcha sonuç fonksiyonu @emre
         public Form4()
         {
             InitializeComponent();
 
+        }
+        public void eskisifrekontrol() //eski şifrenin kontrolü için bağlantılar @emre
+        {
+            string sorgu = "select user_password from giris_ve_kayıt_veritabanı where user_nick=@user and user_password=@password";
+            con = new SqlConnection(SqlCon);
+            cmd = new SqlCommand(sorgu, con);
+            cmd.Parameters.AddWithValue("@user", Form1.kullanicimSession );
+            cmd.Parameters.AddWithValue("@password", Class1.MD5Sifrele(textBox9.Text));
+
+
+
+            con.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.Read()) //şifre ve user okunuyorsa işlemleri yap.@emre
+            {
+                con = new SqlConnection(SqlCon);
+                string sql = "update giris_ve_kayıt_veritabanı set user_password='" + Class1.MD5Sifrele(textBox10.Text) + "'";
+                cmd = new SqlCommand();
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Şifre Değişti!!");
+                label10.Text = "Şifre Değişti!!";
+                con.Close();
+                
+            }
+            else
+            {
+                label10.Text = "Eski şifreniz eksik veya hatalı..";
+                captchaolustur();
+                con.Close();
+            }
+        }
+        
+        public void captchaolustur()
+        {
+            //Captcha oluşturma @emre
+            Random r = new Random();
+            int ilk = r.Next(0, 50);
+            int iki = r.Next(0, 50);
+            sonuc = ilk + iki;
+            label9.Text = ilk.ToString() + "+" + iki.ToString() + "=";
+            textBox12.Clear();
+            
         }
 
 
@@ -75,6 +120,10 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur(dataGridView1, "select * from urun_bilgi");
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
             //datagrid tablolarını göstermek için classtan çektiğim komutlar @bleda
+
+            label10.Text = "";
+            captchaolustur();
+           
 
         }
 
@@ -151,6 +200,43 @@ namespace Kafe_Otomasyonu
         private void button3_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show(id.ToString());
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {  //yeni şifre ve tekrarının kontrolü. @emre
+            label10.Text = "";
+            if(textBox12.Text == sonuc.ToString())
+            {
+                if(textBox10.Text==textBox11.Text)
+                {
+                    eskisifrekontrol();
+                }
+                else
+                {
+                    label10.Text = "Yeni şifre ve tekrarı aynı değil..";
+                    captchaolustur();
+                }
+            }
+            else
+            {
+                label10.Text = "Captcha hatalı girildi..";
+                captchaolustur();
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

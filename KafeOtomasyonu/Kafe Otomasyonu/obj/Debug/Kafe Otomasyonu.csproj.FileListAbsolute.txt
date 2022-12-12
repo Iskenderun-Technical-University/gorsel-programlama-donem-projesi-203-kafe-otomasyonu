@@ -91,3 +91,17 @@ C:\Users\bleda\OneDrive\Masaüstü\proje\KafeOtomasyonu\Kafe Otomasyonu\obj\Debu
 C:\Users\bleda\OneDrive\Masaüstü\proje\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.CoreCompileInputs.cache
 C:\Users\bleda\OneDrive\Masaüstü\proje\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.exe
 C:\Users\bleda\OneDrive\Masaüstü\proje\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.pdb
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.exe.config
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.exe
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\bin\Debug\Kafe Otomasyonu.pdb
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.AssemblyReference.cache
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form1.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form2.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form3.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form4.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Form5.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe_Otomasyonu.Properties.Resources.resources
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.GenerateResource.cache
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.csproj.CoreCompileInputs.cache
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.exe
+C:\Users\bleda\OneDrive\Masaüstü\Yeni klasör (3)\KafeOtomasyonu\Kafe Otomasyonu\obj\Debug\Kafe Otomasyonu.pdb
