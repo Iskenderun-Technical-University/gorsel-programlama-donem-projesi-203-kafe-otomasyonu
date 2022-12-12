@@ -28,20 +28,20 @@ namespace Kafe_Otomasyonu
             InitializeComponent();
         }
 
-        public bool EskiSifreKontrol() //eski şifrenin kontrolü için bağlantılar @emre
+        public bool KullaniciadiKontrol() //eski şifrenin kontrolü için bağlantılar @emre
         {
-            string sorgu = "select Sifre from giris_ve_kayıt_veritabanı where user_nick=@user and user_password=@password";
+            string sorgu = "select user_mail from giris_ve_kayıt_veritabanı where user_mail=@usermail";
             con = new SqlConnection(SqlCon);
             cmd = new SqlCommand(sorgu, con);
-            cmd.Parameters.AddWithValue("@user", Class1.kullaniciCap );
-            cmd.Parameters.AddWithValue("@password", Class1.MD5Sifrele(texBox_eskisifre.Text));
+            cmd.Parameters.AddWithValue("@usermail", texBox_eskisifre.Text);
+            
 
             con.Open();
             dr = cmd.ExecuteReader();
             if (dr.Read()) //şifre ve user okunuyorsa işlemleri yap.@emre
             {
                 con = new SqlConnection(SqlCon);
-                string sql = "update giris_ve_kayıt_veritabanı set Sifre='" + Class1.MD5Sifrele(textBox_yenisifre.Text) + "'";
+                string sql = "update giris_ve_kayıt_veritabanı set user_password='" + Class1.MD5Sifrele(textBox_yenisifre.Text) + "'";
                 cmd = new SqlCommand();
 
                 cmd.Connection = con;
@@ -56,7 +56,7 @@ namespace Kafe_Otomasyonu
             }
             else
             {
-                Label_mesaj.Text = "Eski şifreniz hatalı..";
+                Label_mesaj.Text = "Mail adresiniz eksik veya hatalı..";
                 CaptchaOlustur();
                 con.Close();
                 return false;
@@ -89,7 +89,8 @@ namespace Kafe_Otomasyonu
             {
                 if (textBox_yenisifre.Text == textBox_yenisifretekrar.Text)
                 {
-                    EskiSifreKontrol();
+                    KullaniciadiKontrol();
+
                 }
                 else
                 {

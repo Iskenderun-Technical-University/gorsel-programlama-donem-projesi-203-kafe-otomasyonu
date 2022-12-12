@@ -21,7 +21,7 @@ namespace Kafe_Otomasyonu
         static SqlDataAdapter da;
 
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";
-        public static string kullaniciCap = ""; //form3 için gerekli kullanıcı kontrolü @Emre
+        //public static string kullaniciCap = ""; //form3 için gerekli kullanıcı kontrolü @Emre
 
 
         public static string MD5Sifrele(string sifrelenecekMetin)//burası md5 şifreleme için oluşturduğum class @Bleda
