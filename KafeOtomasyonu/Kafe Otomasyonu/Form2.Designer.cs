@@ -39,48 +39,43 @@
             // 
             // Sifre
             // 
-            this.Sifre.Location = new System.Drawing.Point(215, 689);
-            this.Sifre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Sifre.Location = new System.Drawing.Point(161, 560);
             this.Sifre.Multiline = true;
             this.Sifre.Name = "Sifre";
             this.Sifre.PasswordChar = '*';
-            this.Sifre.Size = new System.Drawing.Size(339, 34);
+            this.Sifre.Size = new System.Drawing.Size(255, 28);
             this.Sifre.TabIndex = 2;
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(215, 626);
-            this.Email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Email.Location = new System.Drawing.Point(161, 509);
             this.Email.Multiline = true;
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(339, 35);
+            this.Email.Size = new System.Drawing.Size(255, 29);
             this.Email.TabIndex = 5;
             this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
             // 
             // KullaniciAdi
             // 
-            this.KullaniciAdi.Location = new System.Drawing.Point(215, 560);
-            this.KullaniciAdi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KullaniciAdi.Location = new System.Drawing.Point(161, 455);
             this.KullaniciAdi.Multiline = true;
             this.KullaniciAdi.Name = "KullaniciAdi";
-            this.KullaniciAdi.Size = new System.Drawing.Size(339, 38);
+            this.KullaniciAdi.Size = new System.Drawing.Size(255, 32);
             this.KullaniciAdi.TabIndex = 6;
             this.KullaniciAdi.TextChanged += new System.EventHandler(this.KullaniciAdi_TextChanged);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 754);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(161, 613);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(339, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(255, 20);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(312, 848);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(234, 689);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Kayıt Ol";
             this.button1.UseVisualStyleBackColor = true;
@@ -88,10 +83,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(679, 31);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(509, 25);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 25);
+            this.button2.Size = new System.Drawing.Size(22, 20);
             this.button2.TabIndex = 9;
             this.button2.Text = "x";
             this.button2.UseVisualStyleBackColor = true;
@@ -101,9 +95,10 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Location = new System.Drawing.Point(298, 813);
+            this.linkLabel1.Location = new System.Drawing.Point(224, 661);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(127, 17);
+            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Giriş Ekranına Dön";
@@ -111,12 +106,12 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Kafe_Otomasyonu.Properties.Resources.login1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(724, 903);
+            this.ClientSize = new System.Drawing.Size(543, 734);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -125,7 +120,6 @@
             this.Controls.Add(this.Email);
             this.Controls.Add(this.Sifre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";

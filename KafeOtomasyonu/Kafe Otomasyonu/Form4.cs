@@ -15,8 +15,8 @@ namespace Kafe_Otomasyonu
     
     public partial class Form4 : Form
     {
-        SqlConnection con,con1;
-        SqlCommand cmd,cmd1;
+        SqlConnection con;
+        SqlCommand cmd,cmd1,cmd2;
         SqlDataReader dr;
         DataSet ds;
         SqlDataAdapter da;
@@ -64,7 +64,20 @@ namespace Kafe_Otomasyonu
                 con.Close();
             }
         }
-        
+        public void AdetAzaltma()
+        {
+            //ürün adet azaltma fonksiyonu @Kemal
+            int sonuc = 0;
+            int ilk = Convert.ToInt32(textBox2.Text);
+            int iki = Convert.ToInt32(textBox1.Text);
+            sonuc = ilk - iki;
+            textBox6.Text = sonuc.ToString();
+
+
+
+
+        }
+
         public void captchaolustur()
         {
             //Captcha oluşturma @emre
@@ -99,17 +112,32 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
 
             con = new SqlConnection(SqlCon);
-            string sqli = "update siparis_tablo set siparis_adet=@s_adet where siparis_id=@s_id ";
+            string sqli = "update urun_bilgi set urun_adet=@u_adet where urun_id=@u_id ";
             cmd1 = new SqlCommand();
-            cmd1.Parameters.AddWithValue("@s_id", Convert.ToInt32(textBox7.Text));
-            cmd1.Parameters.AddWithValue("@s_adet", Convert.ToInt32(textBox2.Text));
+            cmd1.Parameters.AddWithValue("@u_id", Convert.ToInt32(textBox7.Text));
+            cmd1.Parameters.AddWithValue("@u_adet", Convert.ToInt32(textBox2.Text));
             con.Open();
             cmd1.Connection = con;
             cmd1.CommandText = sqli;
             cmd1.ExecuteNonQuery();
             con.Close();
-            Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
+            Class1.GridDoldur2(dataGridView2, "select * from urun_bilgi");
             //sipariş eklemek ve sipariş gücellemek için gerekli komutlar @bleda
+            AdetAzaltma();
+
+            con = new SqlConnection(SqlCon);
+            string sqlii = "update urun_bilgi set urun_adet=@u_adet where urun_id=@uu_id ";
+            cmd2 = new SqlCommand();
+            cmd2.Parameters.AddWithValue("@uu_id", Convert.ToInt32(textBox7.Text));
+            cmd2.Parameters.AddWithValue("@u_adet", Convert.ToInt32(textBox6.Text));
+            con.Open();
+            cmd2.Connection = con;
+            cmd2.CommandText = sqlii;
+            cmd2.ExecuteNonQuery();
+            con.Close();
+            Class1.GridDoldur(dataGridView1, "select * from urun_bilgi");
+            //Ürün tablosundan verilen sipariş kadar azaltmak için @Bleda
+
 
         }
 
@@ -127,7 +155,16 @@ namespace Kafe_Otomasyonu
 
         }
 
+        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox13.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+            textBox14.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            // burada datagrid tablosunu textboxlara aktarmak için yaptım @bleda
 
+
+
+
+        }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -150,10 +187,10 @@ namespace Kafe_Otomasyonu
         {
             
             con = new SqlConnection(SqlCon);
-            string sql = "delete from siparis_tablo where siparis_adi=@s_ad and siparis_adet=@s_adet";
+            string sql = "delete from siparis_tablo where siparis_id=@s_id and siparis_adi=@s_ad";
             cmd = new SqlCommand();
-            cmd.Parameters.AddWithValue("@s_ad", textBox3.Text);
-            cmd.Parameters.AddWithValue("@s_adet", textBox2.Text);
+            cmd.Parameters.AddWithValue("@s_id", textBox13.Text);
+            cmd.Parameters.AddWithValue("@s_ad", textBox14.Text);
             con.Open();
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -162,18 +199,14 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
             //sipariş silmek için yaptığım komutlar @bleda
 
+            
+
 
 
 
         }
 
-        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            textBox3.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
-            textBox4.Text = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            textBox2.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
-            textBox7.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();//burada datagrid tablosunu textboxlara aktarmak için yaptım @bleda
-        }
+        
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -182,18 +215,6 @@ namespace Kafe_Otomasyonu
 
         private void button3_Click(object sender, EventArgs e)
         {
-           /* con = new SqlConnection(SqlCon);
-            string sqli = "update siparis_tablo set siparis_adet=@s_adet where siparis_id=@s_id ";
-            cmd1 = new SqlCommand();
-           cmd1.Parameters.AddWithValue("@s_id", Convert.ToInt32(textBox7.Text));
-            cmd1.Parameters.AddWithValue("@s_adet",Convert.ToInt32(textBox2.Text));
-            con.Open();
-            cmd1.Connection = con;
-            cmd1.CommandText = sqli;
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
-           buraya sakın bulaşmayın dhgasgd @bleda */ 
             
         }
 
@@ -237,6 +258,21 @@ namespace Kafe_Otomasyonu
         private void label12_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
