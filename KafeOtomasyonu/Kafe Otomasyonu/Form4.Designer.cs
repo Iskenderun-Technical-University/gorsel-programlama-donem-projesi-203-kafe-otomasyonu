@@ -31,6 +31,10 @@ namespace Kafe_Otomasyonu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -53,6 +57,7 @@ namespace Kafe_Otomasyonu
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox16 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -70,6 +75,7 @@ namespace Kafe_Otomasyonu
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +92,11 @@ namespace Kafe_Otomasyonu
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.textBox15);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.textBox14);
             this.tabPage1.Controls.Add(this.textBox13);
             this.tabPage1.Controls.Add(this.button4);
@@ -108,6 +119,7 @@ namespace Kafe_Otomasyonu
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.textBox16);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
@@ -117,16 +129,53 @@ namespace Kafe_Otomasyonu
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label15.Location = new System.Drawing.Point(533, 400);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 13);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "sipariş_adet:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(606, 397);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(130, 20);
+            this.textBox15.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label14.Location = new System.Drawing.Point(541, 374);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "sipariş_Adı:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label13.Location = new System.Drawing.Point(541, 352);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Sipariş_ID:";
+            // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(503, 362);
+            this.textBox14.Location = new System.Drawing.Point(607, 371);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
+            this.textBox14.Size = new System.Drawing.Size(130, 20);
             this.textBox14.TabIndex = 27;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(356, 362);
+            this.textBox13.Location = new System.Drawing.Point(607, 345);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(129, 20);
             this.textBox13.TabIndex = 26;
@@ -134,7 +183,7 @@ namespace Kafe_Otomasyonu
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Tomato;
-            this.button4.Location = new System.Drawing.Point(702, 17);
+            this.button4.Location = new System.Drawing.Point(702, 14);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 22);
             this.button4.TabIndex = 24;
@@ -258,7 +307,7 @@ namespace Kafe_Otomasyonu
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Violet;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(456, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(451, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(290, 163);
@@ -314,7 +363,7 @@ namespace Kafe_Otomasyonu
             // 
             this.button2.BackColor = System.Drawing.Color.Tomato;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(388, 412);
+            this.button2.Location = new System.Drawing.Point(307, 423);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 48);
@@ -326,7 +375,7 @@ namespace Kafe_Otomasyonu
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Tomato;
-            this.button1.Location = new System.Drawing.Point(516, 414);
+            this.button1.Location = new System.Drawing.Point(412, 425);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 46);
@@ -348,16 +397,23 @@ namespace Kafe_Otomasyonu
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(377, 371);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(100, 20);
+            this.textBox16.TabIndex = 32;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(2, 1);
+            this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(752, 509);
+            this.tabControl1.Size = new System.Drawing.Size(753, 509);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -367,7 +423,7 @@ namespace Kafe_Otomasyonu
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(744, 483);
+            this.tabPage2.Size = new System.Drawing.Size(745, 483);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -379,7 +435,7 @@ namespace Kafe_Otomasyonu
             this.dataGridView3.Location = new System.Drawing.Point(3, 68);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 47;
-            this.dataGridView3.Size = new System.Drawing.Size(738, 412);
+            this.dataGridView3.Size = new System.Drawing.Size(739, 412);
             this.dataGridView3.TabIndex = 1;
             // 
             // panel1
@@ -390,7 +446,7 @@ namespace Kafe_Otomasyonu
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 65);
+            this.panel1.Size = new System.Drawing.Size(739, 65);
             this.panel1.TabIndex = 0;
             // 
             // button3
@@ -409,6 +465,7 @@ namespace Kafe_Otomasyonu
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(288, 20);
             this.textBox8.TabIndex = 1;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label8
             // 
@@ -530,6 +587,16 @@ namespace Kafe_Otomasyonu
             this.textBox9.TabIndex = 0;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(548, 444);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,5 +668,11 @@ namespace Kafe_Otomasyonu
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button button5;
     }
 }

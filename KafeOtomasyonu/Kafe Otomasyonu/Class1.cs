@@ -98,6 +98,17 @@ namespace Kafe_Otomasyonu
             con.Close();
             return datagrid;//3.datagrid tablo komutları @Kemal
         }
+        public static DataGridView GridDoldur4(DataGridView datagrid, string sqlsorgu)
+        {
+            con = new SqlConnection(SqlCon);
+            da = new SqlDataAdapter(sqlsorgu, con);
+            ds = new System.Data.DataSet();
+            con.Open();
+            da.Fill(ds, sqlsorgu);
+            datagrid.DataSource = ds.Tables[sqlsorgu];
+            con.Close();
+            return datagrid;//3.datagrid tablo komutları @Kemal
+        }
 
         public static int PersonelİdAl(String kullaniciadi, String sifre) //personel id tutmak için bir fonksiyon @emre
         {

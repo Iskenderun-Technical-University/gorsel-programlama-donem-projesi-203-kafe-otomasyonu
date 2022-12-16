@@ -23,7 +23,6 @@ namespace Kafe_Otomasyonu
         public static int id;
         
 
-
         public static string SqlCon = @"Data Source=localhost\SQLEXPRESS;Initial Catalog = Veritabani; Integrated Security = True";//bağlantıları tekrar yapmanıza gerek yok @bleda
         public int sonuc = 0; //captcha sonuç fonksiyonu @emre
         public Form4()
@@ -67,15 +66,19 @@ namespace Kafe_Otomasyonu
         public void AdetAzaltma()
         {
             //ürün adet azaltma fonksiyonu @Kemal
-            int sonuc = 0;
             int ilk = Convert.ToInt32(textBox2.Text);
             int iki = Convert.ToInt32(textBox1.Text);
             sonuc = ilk - iki;
             textBox6.Text = sonuc.ToString();
-
-
-
-
+        }
+        public void Siparisİptal()
+        {
+            int ilk = Convert.ToInt32(textBox2.Text);
+            int iki = Convert.ToInt32(textBox15.Text);
+            sonuc = ilk + iki;
+            textBox16.Text = sonuc.ToString();
+            
+      
         }
 
         public void captchaolustur()
@@ -159,6 +162,8 @@ namespace Kafe_Otomasyonu
         {
             textBox13.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
             textBox14.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+            textBox15.Text = dataGridView2.CurrentRow.Cells[4].Value.ToString();
+
             // burada datagrid tablosunu textboxlara aktarmak için yaptım @bleda
 
 
@@ -185,7 +190,19 @@ namespace Kafe_Otomasyonu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Siparisİptal();
+            con = new SqlConnection(SqlCon);
+            string sqli = "update urun_bilgi set urun_adet=@u_a where urun_id=@u_id";
+            cmd1 = new SqlCommand();
+            con.Open();
+            cmd1.Parameters.AddWithValue("@u_id", textBox7.Text);
+            cmd1.Parameters.AddWithValue("@u_a", textBox14.Text);
+            cmd1.Connection = con;
+            cmd1.CommandText = sqli;
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            Class1.GridDoldur(dataGridView1, "select * from urun_bilgi");
+
             con = new SqlConnection(SqlCon);
             string sql = "delete from siparis_tablo where siparis_id=@s_id and siparis_adi=@s_ad";
             cmd = new SqlCommand();
@@ -199,14 +216,15 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
             //sipariş silmek için yaptığım komutlar @bleda
 
-            
+
+           
 
 
 
 
         }
 
-        
+
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -220,7 +238,9 @@ namespace Kafe_Otomasyonu
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(id.ToString());
+
+            //  MessageBox.Show(id.ToString());
+            
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -273,6 +293,27 @@ namespace Kafe_Otomasyonu
         private void button5_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox8.Text != "")
+            {
+                string sorgu = "select satis_tablo.satıs_id, giris_ve_kayıt_veritabanı.user_nick,siparis_tablo.siparis_adi,siparis_tablo.siparis_fiyat,siparis_tablo.siparis_adet,siparis_tablo.siparis_toplam from satis_tablo INNER join giris_ve_kayıt_veritabanı ON satis_tablo.user_id=giris_ve_kayıt_veritabanı.user_id INNER join siparis_tablo ON satis_tablo.siparis_id=siparis_tablo.siparis_id where giris_ve_kayıt_veritabanı.user_nick like '%"+textBox8.Text+"%'";
+                Class1.GridDoldur4(dataGridView3,sorgu);
+            }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            con = new SqlConnection(SqlCon);
+            string sql = "insert into satis_tablo(user_id,siparis_id) values(" + id + ","+Convert.ToInt32(textBox13.Text)+")";
+            cmd = new SqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
