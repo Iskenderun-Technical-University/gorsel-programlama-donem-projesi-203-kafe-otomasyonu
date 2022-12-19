@@ -53,6 +53,15 @@ namespace Kafe_Otomasyonu
             cmd.ExecuteNonQuery();
             con.Close();
 
+            if (KullaniciAdi.Text == "" || Email.Text == "" || Sifre.Text == "")
+            {
+                MessageBox.Show("ALANLAR BOŞ BIRAKILAMAZ!!!");
+            }
+            else
+            {
+                MessageBox.Show("KAYIT BAŞARILI...");
+            }
+
             
             
         }

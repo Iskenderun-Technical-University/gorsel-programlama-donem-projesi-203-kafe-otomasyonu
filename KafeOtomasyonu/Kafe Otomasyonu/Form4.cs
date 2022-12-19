@@ -65,7 +65,7 @@ namespace Kafe_Otomasyonu
         }
         public void AdetAzaltma()
         {
-            //ürün adet azaltma fonksiyonu @Kemal
+            //Sipariş oluşturmak için aritmetik işlemler. @Kemal
             int ilk = Convert.ToInt32(textBox2.Text);
             int iki = Convert.ToInt32(textBox1.Text);
             sonuc = ilk - iki;
@@ -73,6 +73,7 @@ namespace Kafe_Otomasyonu
         }
         public void Siparisİptal()
         {
+            //Sipariş iptali için aritmetik işlemler. @Kemal
             int ilk = Convert.ToInt32(textBox2.Text);
             int iki = Convert.ToInt32(textBox15.Text);
             sonuc = ilk + iki;
@@ -216,11 +217,7 @@ namespace Kafe_Otomasyonu
             Class1.GridDoldur2(dataGridView2, "select * from siparis_tablo");
             //sipariş silmek için yaptığım komutlar @bleda
 
-
-           
-
-
-
+   
 
         }
 
@@ -238,8 +235,6 @@ namespace Kafe_Otomasyonu
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-
-            //  MessageBox.Show(id.ToString());
             
         }
 
@@ -297,7 +292,7 @@ namespace Kafe_Otomasyonu
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            if (textBox8.Text != "")
+            if (textBox8.Text != "")//Tabloları inner join ile birbirine bağladık. @Kemal
             {
                 string sorgu = "select satis_tablo.satıs_id, giris_ve_kayıt_veritabanı.user_nick,siparis_tablo.siparis_adi,siparis_tablo.siparis_fiyat,siparis_tablo.siparis_adet,siparis_tablo.siparis_toplam from satis_tablo INNER join giris_ve_kayıt_veritabanı ON satis_tablo.user_id=giris_ve_kayıt_veritabanı.user_id INNER join siparis_tablo ON satis_tablo.siparis_id=siparis_tablo.siparis_id where giris_ve_kayıt_veritabanı.user_nick like '%"+textBox8.Text+"%'";
                 Class1.GridDoldur4(dataGridView3,sorgu);
@@ -306,7 +301,7 @@ namespace Kafe_Otomasyonu
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            con = new SqlConnection(SqlCon);
+            con = new SqlConnection(SqlCon); //İnner joint ile bağladığımız tablolardan satış tablosunu dolduran kod bloğu. @Kemal
             string sql = "insert into satis_tablo(user_id,siparis_id) values(" + id + ","+Convert.ToInt32(textBox13.Text)+")";
             cmd = new SqlCommand();
             con.Open();
@@ -314,6 +309,18 @@ namespace Kafe_Otomasyonu
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
