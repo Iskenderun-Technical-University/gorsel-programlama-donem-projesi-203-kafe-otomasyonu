@@ -65,20 +65,6 @@ namespace Kafe_Otomasyonu
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -90,11 +76,6 @@ namespace Kafe_Otomasyonu
             Form2 form2 = new Form2();
             form2.Show();
             this.Hide();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
         }
 
         

@@ -71,16 +71,7 @@ namespace Kafe_Otomasyonu
             sonuc = ilk - iki;
             textBox6.Text = sonuc.ToString();
         }
-        public void Siparisİptal()
-        {
-            //Sipariş iptali için aritmetik işlemler. @Kemal
-            int ilk = Convert.ToInt32(textBox2.Text);
-            int iki = Convert.ToInt32(textBox15.Text);
-            sonuc = ilk + iki;
-            textBox16.Text = sonuc.ToString();
-            
       
-        }
 
         public void captchaolustur()
         {
@@ -168,8 +159,6 @@ namespace Kafe_Otomasyonu
             // burada datagrid tablosunu textboxlara aktarmak için yaptım @bleda
 
 
-
-
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -184,25 +173,9 @@ namespace Kafe_Otomasyonu
 
        
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            Siparisİptal();
-            con = new SqlConnection(SqlCon);
-            string sqli = "update urun_bilgi set urun_adet=@u_a where urun_id=@u_id";
-            cmd1 = new SqlCommand();
-            con.Open();
-            cmd1.Parameters.AddWithValue("@u_id", textBox7.Text);
-            cmd1.Parameters.AddWithValue("@u_a", textBox14.Text);
-            cmd1.Connection = con;
-            cmd1.CommandText = sqli;
-            cmd1.ExecuteNonQuery();
-            con.Close();
-            Class1.GridDoldur(dataGridView1, "select * from urun_bilgi");
+            
 
             con = new SqlConnection(SqlCon);
             string sql = "delete from siparis_tablo where siparis_id=@s_id and siparis_adi=@s_ad";
@@ -221,32 +194,6 @@ namespace Kafe_Otomasyonu
 
         }
 
-
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void label11_Click(object sender, EventArgs e)
         {  //yeni şifre ve tekrarının kontrolü. @emre
@@ -275,20 +222,14 @@ namespace Kafe_Otomasyonu
             Application.Exit();
         }
 
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-           
-        }
+ 
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
@@ -311,10 +252,6 @@ namespace Kafe_Otomasyonu
             con.Close();
         }
 
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -323,19 +260,7 @@ namespace Kafe_Otomasyonu
             this.Hide();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-        
-  
+     
     }
 }
 

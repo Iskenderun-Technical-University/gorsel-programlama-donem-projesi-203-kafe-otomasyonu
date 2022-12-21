@@ -112,11 +112,6 @@ namespace Kafe_Otomasyonu
 
             dateTimePicker2.Text = dataGridView3.CurrentRow.Cells[4].Value.ToString();
         }
-
-        private void Kullaniciadinagore_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -136,8 +131,6 @@ namespace Kafe_Otomasyonu
                
             }
         }
-
-       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -166,11 +159,6 @@ namespace Kafe_Otomasyonu
             dataGridView1.Columns.Clear(); //temizleme komutu @emre
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
@@ -187,8 +175,6 @@ namespace Kafe_Otomasyonu
         {
             Application.Exit();
         }
-
-        
 
         private void Form5_Load(object sender, EventArgs e)
         {

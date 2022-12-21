@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Kullaniciadinagore = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -111,6 +111,32 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Tomato;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button9.Location = new System.Drawing.Point(584, 6);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(27, 26);
+            this.button9.TabIndex = 32;
+            this.button9.Text = "X";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Tomato;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Location = new System.Drawing.Point(39, 338);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 48);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Geri Dön";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label6
             // 
@@ -245,7 +271,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 17;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            
             // 
             // dataGridView3
             // 
@@ -437,7 +463,7 @@
             this.Kullaniciadinagore.TabStop = true;
             this.Kullaniciadinagore.Text = "Kullanıcı Adına Göre";
             this.Kullaniciadinagore.UseVisualStyleBackColor = false;
-            this.Kullaniciadinagore.CheckedChanged += new System.EventHandler(this.Kullaniciadinagore_CheckedChanged);
+            
             // 
             // dataGridView1
             // 
@@ -447,31 +473,6 @@
             this.dataGridView1.RowHeadersWidth = 47;
             this.dataGridView1.Size = new System.Drawing.Size(553, 158);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Tomato;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(39, 338);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 48);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Geri Dön";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Tomato;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button9.Location = new System.Drawing.Point(584, 6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(27, 26);
-            this.button9.TabIndex = 32;
-            this.button9.Text = "X";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form5
             // 

@@ -53,7 +53,7 @@
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(255, 29);
             this.Email.TabIndex = 5;
-            this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
+            
             // 
             // KullaniciAdi
             // 
@@ -62,7 +62,7 @@
             this.KullaniciAdi.Name = "KullaniciAdi";
             this.KullaniciAdi.Size = new System.Drawing.Size(255, 32);
             this.KullaniciAdi.TabIndex = 6;
-            this.KullaniciAdi.TextChanged += new System.EventHandler(this.KullaniciAdi_TextChanged);
+            
             // 
             // dateTimePicker1
             // 
